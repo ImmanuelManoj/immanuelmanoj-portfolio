@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Immanuel Manoj — Photographer, Videographer, Social Media Manager and Designer." />
+  <title>Immanuel Manoj | Creative Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#090909; --panel:#111111; --panel2:#171717; --text:#f4f1eb;
+      --muted:#aaa49b; --line:#282621; --accent:#d6a85d; --white:#fff;
+      --max:1180px; --radius:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max),92%);margin:auto}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(9,9,9,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:700;letter-spacing:.08em;font-size:14px}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:26px;align-items:center;font-size:13px;color:#c8c2b9}
+    .nav-links a:hover{color:var(--accent)}
+    .menu{display:none;background:none;border:0;color:white;font-size:25px}
+    .hero{min-height:100vh;display:grid;place-items:center;padding:120px 0 70px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(214,168,93,.15),transparent 68%);right:-180px;top:60px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}
+    .eyebrow{text-transform:uppercase;letter-spacing:.24em;font-size:11px;color:var(--accent);margin-bottom:18px}
+    h1{font:700 clamp(52px,8vw,96px)/.96 "Playfair Display",serif;letter-spacing:-.04em}
+    h1 em{color:var(--accent);font-style:normal}
+    .hero p{max-width:620px;color:var(--muted);font-size:17px;margin:26px 0 32px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;border:1px solid var(--line);font-size:13px;font-weight:600}
+    .btn.primary{background:var(--accent);color:#111;border-color:var(--accent)}
+    .btn:hover{transform:translateY(-2px)}
+    .hero-card{aspect-ratio:4/5;border-radius:28px;background:
+      linear-gradient(145deg,rgba(214,168,93,.15),transparent 45%),
+      linear-gradient(135deg,#26221c,#0e0e0e);border:1px solid var(--line);
+      display:flex;align-items:flex-end;padding:28px;box-shadow:0 30px 90px rgba(0,0,0,.45)}
+    .hero-card .card-text{width:100%;padding:22px;border-radius:18px;background:rgba(0,0,0,.48);backdrop-filter:blur(8px)}
+    .hero-card small{color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+    section{padding:105px 0}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:42px}
+    .section-head h2{font:700 clamp(34px,5vw,58px)/1 "Playfair Display",serif}
+    .section-head p{color:var(--muted);max-width:490px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+    .about-copy p{color:#c1bcb4;margin-bottom:18px}
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .stat{background:var(--panel);border:1px solid var(--line);padding:25px;border-radius:18px}
+    .stat strong{font:700 38px "Playfair Display";display:block;color:var(--accent)}
+    .stat span{font-size:12px;color:var(--muted)}
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .service{background:var(--panel);border:1px solid var(--line);padding:28px;border-radius:18px;min-height:200px}
+    .service .num{color:var(--accent);font-size:12px}
+    .service h3{margin:38px 0 10px;font-size:17px}
+    .service p{font-size:13px;color:var(--muted)}
+    .work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .work{min-height:330px;border-radius:20px;border:1px solid var(--line);overflow:hidden;position:relative;background:
+      radial-gradient(circle at 30% 20%,rgba(214,168,93,.24),transparent 32%),
+      linear-gradient(135deg,#29251f,#101010)}
+    .work:nth-child(1){grid-column:span 7}
+    .work:nth-child(2){grid-column:span 5}
+    .work:nth-child(3){grid-column:span 5}
+    .work:nth-child(4){grid-column:span 7}
+    .work:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(0,0,0,.82))}
+    .work-content{position:absolute;z-index:2;bottom:0;padding:25px}
+    .work-content small{color:var(--accent);text-transform:uppercase;letter-spacing:.12em}
+    .work-content h3{font-size:22px;margin-top:6px}
+    .work-content p{color:#c0bbb3;font-size:13px}
+    .skills{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .skill{padding:20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;color:#d5d0c8}
+    .skill span{color:var(--accent);font-size:12px}
+    .experience{border-top:1px solid var(--line)}
+    .exp{display:grid;grid-template-columns:180px 1fr;gap:30px;padding:30px 0;border-bottom:1px solid var(--line)}
+    .exp .year{color:var(--accent);font-size:12px;letter-spacing:.1em}
+    .exp h3{font-size:19px;margin-bottom:5px}.exp p{color:var(--muted);font-size:14px}
+    .cta{background:linear-gradient(135deg,#17130d,#0e0e0e);border:1px solid var(--line);border-radius:28px;padding:60px;display:flex;justify-content:space-between;gap:30px;align-items:center}
+    .cta h2{font:700 clamp(35px,5vw,58px)/1 "Playfair Display",serif}
+    .cta p{color:var(--muted);max-width:520px;margin-top:12px}
+    footer{padding:35px 0;border-top:1px solid var(--line);color:#77736d;font-size:12px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px}
+    .socials{display:flex;gap:18px}.socials a:hover{color:var(--accent)}
+    @media(max-width:850px){
+      .nav-links{display:none}.menu{display:block}
+      .hero-grid,.about{grid-template-columns:1fr;gap:45px}
+      .hero-card{max-width:520px}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .work:nth-child(n){grid-column:span 12;min-height:280px}
+      .exp{grid-template-columns:1fr;gap:8px}
+      .cta{padding:38px;display:block}.cta .btn{margin-top:24px}
+    }
+    @media(max-width:560px){
+      .nav-inner{height:65px}.hero{padding-top:100px}
+      .services,.stats,.skills{grid-template-columns:1fr}
+      section{padding:75px 0}
+      .section-head{display:block}.section-head p{margin-top:15px}
+      .hero p{font-size:15px}.footer-inner{display:block}.socials{margin-top:12px}
+    }
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#home">IMMANUEL<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a>
+      <a href="#experience">Experience</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Creative Professional · Dubai / UAE</div>
+        <h1>Stories that<br><em>look</em> unforgettable.</h1>
+        <p>I’m Immanuel Manoj — a Photographer, Videographer, Social Media Manager and Designer creating visual content that helps people and brands get noticed.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#work">View My Work</a>
+          <a class="btn" href="#contact">Let’s Work Together</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-text">
+          <small>Creative Direction</small>
+          <h3 style="font-size:25px;margin-top:7px">Photography · Film · Social</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head"><h2>About Me</h2><p>Creative, detail-focused and comfortable taking a project from idea to final publish-ready content.</p></div>
+      <div class="about">
+        <div class="about-copy">
+          <p>I’m a creative professional with <strong>4 years of experience in photography and videography</strong> and <strong>2 years of experience in social media management</strong>, with additional experience in design and visual content.</p>
+          <p>My work combines strong visual storytelling with practical social-media thinking — creating content that is not only beautiful, but built to communicate, engage and support a brand.</p>
+          <p>Available for full-time opportunities, freelance projects, brand collaborations and creative production work.</p>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>4+</strong><span>Years · Photography & Videography</span></div>
+          <div class="stat"><strong>2+</strong><span>Years · Social Media Management</span></div>
+          <div class="stat"><strong>360°</strong><span>Creative content workflow</span></div>
+          <div class="stat"><strong>UAE</strong><span>Open to Dubai-based opportunities</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head"><h2>What I Do</h2><p>End-to-end creative support for brands, businesses, events and personal projects.</p></div>
+      <div class="services">
+        <article class="service"><div class="num">01</div><h3>Photography</h3><p>Portraits, products, events, lifestyle and brand photography with a polished visual finish.</p></article>
+        <article class="service"><div class="num">02</div><h3>Videography</h3><p>Short-form videos, event coverage, promotional content and cinematic visual storytelling.</p></article>
+        <article class="service"><div class="num">03</div><h3>Social Media</h3><p>Content planning, creative direction, posting strategy, captions and visual consistency.</p></article>
+        <article class="service"><div class="num">04</div><h3>Design & Editing</h3><p>Social creatives, campaign visuals, thumbnails, layouts and professional photo/video editing.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="container">
+      <div class="section-head"><h2>Selected Work</h2><p>Replace these showcase cards with your real project images, reels and client work.</p></div>
+      <div class="work-grid">
+        <article class="work"><div class="work-content"><small>Photography</small><h3>Portrait Stories</h3><p>Cinematic portraits with controlled light and editorial styling.</p></div></article>
+        <article class="work"><div class="work-content"><small>Videography</small><h3>Brand Films</h3><p>Short promotional videos designed for digital-first audiences.</p></div></article>
+        <article class="work"><div class="work-content"><small>Social Media</small><h3>Content Campaigns</h3><p>Visual content systems for consistent social presence.</p></div></article>
+        <article class="work"><div class="work-content"><small>Creative</small><h3>Events & Lifestyle</h3><p>Authentic moments captured for people, brands and experiences.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head"><h2>Experience</h2><p>A creative career built around visual storytelling, digital content and design.</p></div>
+      <div class="experience">
+        <div class="exp"><div class="year">4+ YEARS</div><div><h3>Photography & Videography</h3><p>Professional visual production, shooting, editing, creative direction and content delivery.</p></div></div>
+        <div class="exp"><div class="year">2+ YEARS</div><div><h3>Social Media Management</h3><p>Content planning, publishing, campaign creatives, audience-focused storytelling and brand consistency.</p></div></div>
+        <div class="exp"><div class="year">DESIGN</div><div><h3>Graphic & Visual Design</h3><p>Digital creatives, promotional materials, visual layouts and brand-supporting design work.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head"><h2>Skills</h2><p>Creative and production skills I bring to a project.</p></div>
+      <div class="skills">
+        <div class="skill">Photography <span>01</span></div>
+        <div class="skill">Videography <span>02</span></div>
+        <div class="skill">Video Editing <span>03</span></div>
+        <div class="skill">Photo Retouching <span>04</span></div>
+        <div class="skill">Social Media Management <span>05</span></div>
+        <div class="skill">Content Creation <span>06</span></div>
+        <div class="skill">Graphic Design <span>07</span></div>
+        <div class="skill">Creative Direction <span>08</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="cta">
+        <div>
+          <div class="eyebrow">Have a project?</div>
+          <h2>Let’s create something memorable.</h2>
+          <p>Available for creative roles, freelance projects, brand content and collaborations in Dubai/UAE.</p>
+        </div>
+        <div class="buttons">
+          <!-- Replace the placeholder email and WhatsApp number below -->
+          <a class="btn primary" href="mailto:YOUR_EMAIL@example.com">Email Me</a>
+          <a class="btn" href="https://wa.me/YOUR_NUMBER" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Immanuel Manoj. All rights reserved.</div>
+    <div class="socials">
+      <!-- Replace with your actual profile links -->
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      <a href="#" aria-label="YouTube">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  function toggleMenu(){
+    const nav = document.querySelector(".nav-links");
+    const open = nav.style.display === "flex";
+    nav.style.display = open ? "" : "flex";
+    if(!open){
+      nav.style.position="absolute"; nav.style.top="65px"; nav.style.left="0"; nav.style.right="0";
+      nav.style.background="#090909"; nav.style.padding="20px"; nav.style.flexDirection="column";
+      nav.style.borderBottom="1px solid #282621";
+    }
+  }
+</script>
+</body>
+</html>
